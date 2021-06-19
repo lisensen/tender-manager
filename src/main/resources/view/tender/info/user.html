@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--解决idea thymeleaf 表达式模板报红波浪线-->
+<!--suppress ALL -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- 引入公用部分 -->
+    <script th:replace="common/head::static"></script>
+    <!-- 样式 -->
+    <link th:href="@{/tender/css/user.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div class="layui-row layui-col-space15">
+    <!-- 树 -->
+    <div class="">
+        <div class="layui-card">
+            <div class="layui-card-header">投标人信息</div>
+            <div class="layui-card-body">
+                <!-- 表格主体 -->
+                <table class="layui-hide" id="userTable" lay-filter="test"></table>
+                <!-- 模板 -->
+                <script type="text/html" id="userTableToolbarDemo">
+                    <div class="layui-btn-container">
+                        <input type="text" id="userName" name="userName" autocomplete="off" placeholder="姓名" class="layui-input-inline layui-btn layui-btn-primary">
+                        <input type="text" id="phone" name="phone" autocomplete="off" placeholder="手机号" class="layui-input-inline layui-btn layui-btn-primary">
+                        <input type="text" id="idCard" name="idCard" autocomplete="off" placeholder="身份证号" class="layui-input-inline layui-btn layui-btn-primary">
+                        <input type="text" id="tenderNo" name="tenderNo" autocomplete="off" placeholder="投标单号" class="layui-input-inline layui-btn layui-btn-primary">
+                        <button class="layui-btn layui-btn-sm" lay-event="query">查询<i class="layui-icon layui-input-inline layui-icon-search"></i></button>
+                        <button class="layui-btn layui-btn-sm" lay-event="clear">重置<i class="layui-icon layui-input-inline layui-icon-refresh"></i></button>
+                        <button class="layui-btn layui-btn-sm" lay-event="export">导出<i class="layui-icon layui-input-inline layui-icon-export"></i></button>
+                    </div>
+                </script>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<!-- js -->
+<script th:src="@{/tender/js/user.js}"></script>
+</html>
